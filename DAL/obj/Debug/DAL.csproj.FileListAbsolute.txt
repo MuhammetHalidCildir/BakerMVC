@@ -1,0 +1,17 @@
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.Migrations.UStart.resources
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\DAL.dll.config
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\DAL.dll
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\DAL.pdb
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\Entities.dll
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\EntityFramework.dll
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\Entities.pdb
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\Entities.dll.config
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\EntityFramework.xml
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.dll
+C:\Users\ARIBILGI1\source\repos\ilker\Baker\DAL\obj\Debug\DAL.pdb

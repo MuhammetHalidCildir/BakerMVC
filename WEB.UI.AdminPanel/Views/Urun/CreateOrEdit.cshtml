@@ -1,0 +1,145 @@
+﻿@model BLL.Models.UrunDetail
+
+@{
+    ViewBag.Title = "CreateOrEdit";
+}
+
+<div class="card my-2">
+    <div class="card-header">
+        @if (Model != null)
+        {
+            <h2>Ürün Güncelle</h2>
+        }
+        else
+        {
+            <h2>Ürün Ekle</h2>
+        }
+    </div>
+    <div class="card-body">
+        @if (Model != null)
+        {
+            <h5 class="card-title">@Model.Id: @Model.Title</h5>
+        }
+        else
+        {
+            <h5>Yeni Ürün</h5>
+        }
+        <p class="card-text">Aşağıdaki alanlara ilgili verileri girerek güncelleyiniz.</p>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = Html.DisplayNameFor(m => m.Title) } })
+                        @Html.LabelFor(model => model.Title)
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        @Html.DropDownListFor(model => model.AltkategoriId, new SelectList(ViewBag.Altkategoriler, "Id", "Title"), "AltKategori Seçiniz", new { @class = "form-control", @placeholder = Html.DisplayNameFor(m => m.AltkategoriId) })
+                        @Html.LabelFor(model => model.AltkategoriId)
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = Html.DisplayNameFor(m => m.Description) } })
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        @Html.EditorFor(model => model.Fiyat, new { htmlAttributes = new { @class = "form-control", @placeholder = Html.DisplayNameFor(m => m.Fiyat) } })
+                        @Html.LabelFor(model => model.Fiyat)
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        @Html.EditorFor(model => model.KampanyaOrani, new { htmlAttributes = new { @class = "form-control", @placeholder = Html.DisplayNameFor(m => m.KampanyaOrani) } })
+                        @Html.LabelFor(model => model.KampanyaOrani)
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <div class="form-check form-switch">
+                            @Html.EditorFor(model => model.Kampanya, new { htmlAttributes = new { @class = "form-check-input", @role = "switch" } })
+                            @Html.LabelFor(model => model.Kampanya, new { @class = "form-check-label" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Ekle</button>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="card-footer">
+        @Html.ActionLink("Back to List", "Index", "Urun", new { }, new { @class = "btn btn-sm btn-outline-secondary" })
+    </div>
+</div>
+
+
+@*@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>UrunDetail</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AltkategoriId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("AltKategoriId", new SelectList(ViewBag.AltKategoriler, "Id", "Title"), "Altkategori seçiniz", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.AltkategoriId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Fiyat, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Fiyat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Fiyat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Kampanya, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.Kampanya)
+                        @Html.ValidationMessageFor(model => model.Kampanya, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.KampanyaOrani, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.KampanyaOrani, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.KampanyaOrani, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }*@
